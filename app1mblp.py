@@ -28,19 +28,19 @@ def exibir_grafico(avaliacoes, descontos):
     return plt
 
 # Avaliações ao usuário
-avaliacao_inicial = int(st.text_input("Informe o valor da avaliação inicial do imóvel: "))
-saude = int(st.text_input("Avaliação de Saúde: "))
-seguranca = int(st.text_input("Avaliação de Segurança: "))
-educacao = int(st.text_input("Avaliação de Educação: "))
-lazer = int(st.text_input("Avaliação de Lazer e Diversão: "))
-comercial = int(st.text_input("Avaliação Comercial: "))
+avaliacao_inicial = float(st.number_input("Informe o valor da avaliação inicial do imóvel: "))
+saude = float(st.number_input("Avaliação de Saúde: "))
+seguranca = float(st.number_input("Avaliação de Segurança: "))
+educacao = float(st.number_input("Avaliação de Educação: "))
+lazer = float(st.number_input("Avaliação de Lazer e Diversão: "))
+comercial = float(st.number_input("Avaliação Comercial: "))
 
 # Calcular o valor final do imóvel
 descontos, valor_final = calcular_valor_imovel(avaliacao_inicial, saude, seguranca, educacao, lazer, comercial)
 
 # Exibir as informações
-st.text("Valor dos Descontos:", descontos)
-st.text("Valor Final:", valor_final)
+st.text(f"Valor dos Descontos: {descontos}")
+st.text(f"Valor Final: {valor_final}")
 
 # Exibir o gráfico de linha
 avaliacoes = [saude, seguranca, educacao, lazer, comercial]
